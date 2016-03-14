@@ -30,14 +30,6 @@ Get blueprint by Id
 Get-BlueprintByID -BlueprintId "9e43555f-d8a1-447b-bcd4-f00a54c957aa"
 ```
 
-Stopping a Sandbox:
-```powershell
-Stop-Sandbox -SandboxId "65f2710d-14f5-4e05-86a9-19ffd2e02f08"
-```
-```powershell
-Get-Sandboxs | Where-Object -Property name -eq "StopME" | Stop-Sandbox
-```
-
 Start Sandbox
 ```powershell
 Invoke-StartBlueprint -BlueprintId "9e43555f-d8a1-447b-bcd4-f00a54c957aa" -SandboxName "SandboxName" -DurationInMinuets 320
@@ -47,6 +39,15 @@ Start Sandbox after quering the blueprint
 ```powershell
 Get-Blueprints | Where-Object -Property name -eq "BlueprintName" | Invoke-StartBlueprint -SandboxName "New Name"
 ```
+
+Stopping a Sandbox:
+```powershell
+Stop-Sandbox -SandboxId "65f2710d-14f5-4e05-86a9-19ffd2e02f08"
+```
+```powershell
+Get-Sandboxs | Where-Object -Property name -eq "StopME" | Stop-Sandbox
+```
+
 
 Get Sandboxes
 ```powershell
