@@ -8,7 +8,7 @@ cd Sandbox-API-PowerShell-Wrapper
 powershell -NoExit -Command "Import-Module .\SandBoxAPi"
 ```
 
-### Command
+### Commands
 
 Login
 ```powershell
