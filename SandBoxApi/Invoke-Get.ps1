@@ -3,9 +3,14 @@
     param
     (
         [string]
-        $Uri
+        $Uri,
+		[bool]
+		$printUrl = $true
     )
-    Write-Host 'Sending GET: ' $Uri -ForegroundColor Yellow
+    if ($printUrl)
+	{
+		Write-Host 'Sending GET: ' $Uri -ForegroundColor Yellow
+	}
     return Invoke-RestMethod -Uri $Uri -Method Get -ContentType $ContentTypeJson -Headers @{
         Authorization = "Basic $Auth"
     }

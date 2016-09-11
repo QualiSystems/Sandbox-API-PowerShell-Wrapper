@@ -5,14 +5,16 @@
         [string]
         $SandboxId,
 		[switch]
-		$asJson = $false
+		$asJson = $false,
+        [Parameter(Mandatory=$false)][bool]
+        $printUrl = $true
     )
 	if (Invoke-TokenExsists)
 	{
-		$response = Invoke-Get -Uri "$BaseURL/sandboxes/$SandboxId"
+		$response = Invoke-Get -Uri "$BaseURL/sandboxes/$SandboxId" -printUrl $printUrl
 		if ($response.count -eq 0) 
 		{
-			Write-Host -Object 'No sandboxe'
+			Write-Host -Object 'No sandboxes'
 		}
 		else 
 		{

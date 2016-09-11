@@ -16,16 +16,6 @@
         $Duration = [System.XML.XmlConvert]::ToString([System.TimeSpan]::FromMinutes($DurationInMinuets))
 		$body = @{name = $SandboxName; duration = $Duration} | ConvertTo-Json
 		$response = Invoke-Post -Uri "$BaseURL/blueprints/$BlueprintId/start" -body $body
-		if ($response -ne $null) 
-		{
-			if ($asJson.IsPresent)
-			{
-				return $response | ConvertTo-Json
-			}
-			else
-			{
-				return $response
-			}
-		}
+		return $response.id
 	}
 }
