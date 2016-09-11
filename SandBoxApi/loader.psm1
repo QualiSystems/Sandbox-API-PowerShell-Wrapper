@@ -7,8 +7,19 @@
 . $PSScriptRoot\Get-Sandboxs.ps1
 . $PSScriptRoot\Invoke-Get.ps1
 . $PSScriptRoot\Invoke-Post.ps1
+. $PSScriptRoot\Wait-Sandbox.ps1
 . $PSScriptRoot\Invoke-Put.ps1
 . $PSScriptRoot\Invoke-Login.ps1
 . $PSScriptRoot\Stop-Sandbox.ps1
 . $PSScriptRoot\Invoke-StartBlueprint.ps1
 . $PSScriptRoot\Invoke-TokenExsists.ps1
+
+Add-Type -TypeDefinition @"
+	public enum SandBoxStatus 
+	{
+		Ready, 
+		Setup, 
+		Error,
+		Pending Setup
+	}
+"@

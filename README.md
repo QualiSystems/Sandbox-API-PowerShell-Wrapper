@@ -40,6 +40,12 @@ Start blueprint by name
 Get-Blueprints | Where-Object -Property name -eq "BlueprintName" | Invoke-StartBlueprint -SandboxName "New Name"
 ```
 
+Start blueprint and wait for setup to complete
+```powershell
+Get-Blueprints | Where-Object -Property name -eq "BlueprintName" | Invoke-StartBlueprint -SandboxName "New Name"
+```
+Invoke-StartBlueprint -BlueprintId "90ad79e3-933c-4905-9c29-9665311130c8" -SandboxName "Sandbox-Test" -DurationInMinuets 30 | Wait-Sandbox -Status Ready
+
 Stop Sandbox:
 ```powershell
 Stop-Sandbox -SandboxId "65f2710d-14f5-4e05-86a9-19ffd2e02f08"
